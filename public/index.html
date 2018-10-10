@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	<meta name="theme-color" content="#000000">
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	<meta name="google-site-verification" content="r3dPzx5CPmYi7UYGOCodD2FXbKOcCFHQS1_nujduPQ0" />
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+
+	<!-- <title>Braxley Bands</title> -->
+</head>
+
+<body>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+	<div id="root"></div>
+
+	<form name="contact" netlify hidden netlify-honeypot="bot-field">
+		<input type="hidden" name="form-name" value="contact" />
+		<input type="text" name="name" />
+		<input type="email" name="email" />
+		<textarea name="message"></textarea>
+	</form>
+
+	<!-- <form name="subscribe" netlify hidden netlify-honeypot="bot-field">
+		<input type="hidden" name="form-name" value="subscribe" />
+		<input type="email" name="EMAIL" />
+	</form> -->
+
+	<!-- Facebook Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '507933856240371');
+		fbq('track', 'PageView');
+	</script>
+	<noscript>
+		<img height="1" width="1" src="https://www.facebook.com/tr?id=507933856240371&ev=PageView
+	&noscript=1" />
+	</noscript>
+	<!-- End Facebook Pixel Code -->
+
+
+</body>
+
+</html>

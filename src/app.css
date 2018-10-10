@@ -1,0 +1,1907 @@
+/* INITIALIZERS + DEFAULTS
+ * ============================== */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Damion');
+
+@font-face {
+    font-family: 'Lulo Clean One';
+    src: url('./assets/LuloCleanOne-Bold.woff2') format('woff2'),
+        url('./assets/LuloCleanOne-Bold.woff') format('woff'),
+        url('./assets/LuloCleanOne-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 65%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h1 {
+  font-weight: 300;
+  margin: 0 0 15px;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: 300;
+  margin: 0;
+  font-size: 2rem;
+}
+
+input, textarea {
+	background-color: rgba(255, 255, 255, 0.24);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid rgba(249, 213, 166, 1);
+  color: #fff;
+  padding: 5px;
+	width: 100%;
+	outline: none;
+}
+
+input::placeholder, textarea::placeholder {
+	color: inherit;
+}
+
+input:focus:invalid {
+	border: 2px solid red;
+	outline: none;
+}
+
+textarea:focus:invalid {
+	border: 2px solid red;
+	outline: none;
+}
+
+.input-error {
+	margin: 1rem;
+	color: #b71c1c;
+	background: #efefef;
+	width: 100%;
+	display: none;
+	max-width: 200px;
+}
+
+.crt-popup-wrapper .crt-popup .crt-popup-header .crt-post-name {
+	left: 50px !important;
+}
+
+/* BASE APP
+ * ============================== */
+.App__header {
+  background-color: #222;
+  background-image: url('https://unsplash.it/1000/300?image=823');
+  background-size: cover;
+  color: white;
+  padding: 10px 10px;
+}
+
+.App__nav{
+  width: 100%;
+  list-style: none;
+}
+
+.App__customer-actions {
+  float: left;
+  padding: 10px;
+}
+
+.App__title {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+
+
+.Product-wrapper {
+  max-width: 900px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 5rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.App__view-cart-wrapper {
+  float: right;
+}
+
+.App__view-cart {
+  font-size: 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+}
+
+.button {
+  background-color: #8EBFBC;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px 17px;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  opacity: .8;
+}
+
+.button:disabled {
+  background: #bfbfbf;
+  cursor: not-allowed;
+}
+
+.login {
+  font-size: 1.2rem;
+  color: #b8b8b8;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: white;
+}
+
+.Flash__message-wrapper {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  align-items: flex-end;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 227;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Flash__message {
+  background: rgba(0,0,0,0.88);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #ffffff;
+  cursor: default;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: none;
+  pointer-events: auto;
+  position: relative;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  padding: 10px 20px;
+  margin: 0;
+}
+
+.Flash__message--open {
+  display: flex;
+}
+
+/* CART
+ * ============================== */
+.Cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2147483647;
+  height: 100%;
+  width: 350px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #e5e5e5;
+  transform: translateX(100%);
+  transition: transform 0.15s ease-in-out;
+}
+
+.Cart--open {
+  transform: translateX(0);
+}
+
+.Cart__close {
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  font-size: 35px;
+  color: #999;
+  border: none;
+  background: transparent;
+  transition: transform 100ms ease;
+  cursor: pointer;
+}
+
+.Cart__header {
+  padding: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  flex: 0 0 auto;
+	display: inline-block;
+	position: relative;
+}
+
+.Cart__header h2 {
+	text-align: center;
+}
+
+.Cart__line-items {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.Cart__footer {
+  padding: 20px;
+  border-top: 1px solid #e5e5e5;
+  flex: 0 0 auto;
+}
+
+.Cart__checkout {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.Cart-info {
+	padding: 15px 20px 10px;
+	font-family: 'Lulo Clean One';
+	font-size: 1rem;
+}
+
+.Cart-info__total {
+  float: left;
+  text-transform: uppercase;
+}
+
+.Cart-info__small {
+  font-size: 11px;
+}
+
+.Cart-info__pricing {
+  float: right;
+}
+
+.pricing {
+  margin-left: 5px;
+  font-size: 16px;
+  color: black;
+}
+
+/* LINE ITEMS
+ * ============================== */
+.Line-item {
+  margin-bottom: 20px;
+  overflow: hidden;
+  backface-visibility: visible;
+  min-height: 65px;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.Line-item__img {
+  width: 65px;
+  height: 65px;
+  border-radius: 3px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-color: #e5e5e5; */
+	position: absolute;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Line-item__content {
+  width: 100%;
+  padding-left: 75px;
+}
+
+.Line-item__content-row {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.Line-item__variant-title {
+  float: right;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 17px;
+  color: #767676;
+}
+
+.Line-item__title {
+  color: #4E5665;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.Line-item__price {
+  line-height: 23px;
+  float: right;
+  font-weight: bold;
+  font-size: 15px;
+  margin-right: 40px;
+}
+
+.Line-item__quantity-container {
+  border: 1px solid #767676;
+  float: left;
+  border-radius: 3px;
+}
+
+.Line-item__quantity-update {
+  color: #767676;
+  display: block;
+  float: left;
+  height: 21px;
+  line-height: 16px;
+  font-family: monospace;
+  width: 25px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+}
+
+.Line-item__quantity-update-form {
+  display: inline;
+}
+
+.Line-item__quantity {
+  color: black;
+  width: 38px;
+  height: 21px;
+  line-height: 23px;
+  font-size: 15px;
+  border: none;
+  text-align: center;
+  -moz-appearance: textfield;
+  background: transparent;
+  border-left: 1px solid #767676;
+  border-right: 1px solid #767676;
+  display: block;
+  float: left;
+  padding: 0;
+  border-radius: 0;
+}
+
+.Line-item__remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  background: 0;
+  font-size: 20px;
+  top: -4px;
+  opacity: 0.5;
+}
+
+.Line-item__remove:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* PRODUCTS
+ * ============================== */
+.Product {
+  flex: 0 1 31%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 3%;
+}
+
+.Product__title {
+	font-size: 2rem;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.Product-page__title {
+	font-size: 3rem;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-family: 'Lulo Clean One', sans-serif;
+}
+
+button.ant-btn.ant-btn-primary {
+  width: 100%;
+}
+
+.Product__price {
+	text-align: center;
+	display: block;
+	font-weight: 700;
+	letter-spacing: 1px;
+  opacity: 0.7;
+	margin-bottom: 0.4rem;
+	font-family: 'Lulo Clean One';
+}
+
+.Product__option {
+  display: block;
+  /* width: 100%; */
+  margin-bottom: 20px;
+}
+
+.Product__option-label {
+	margin-bottom: 5px;
+	display: block;
+	font-family: 'Lulo Clean One';
+	font-size: 1.5rem;
+}
+
+.Product__quantity {
+  display: block;
+  width: 15%;
+  margin-bottom: 10px;
+}
+
+.Product-page__price h2 {
+	font-family: 'Lulo Clean One';
+	font-size: 1.75rem;
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.product-sizing-guide {
+	margin: 2rem 0;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.product-sizing-guide p {
+	margin-bottom: 5px;
+}
+
+.product-social-share {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: row;
+}
+
+.product-social-share .SocialMediaShareButton {
+	margin: 0 4px;
+}
+
+/* CUSTOMER AUTH
+ * ============================== */
+.CustomerAuth {
+  background: #2a2c2e;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  padding: 0 0 65px;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  transition: opacity 150ms;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+  position: fixed;
+}
+
+.CustomerAuth--open {
+  display: block;
+}
+
+.CustomerAuth__close {
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  font-size: 35px;
+  color: #999;
+  border: none;
+  background: transparent;
+  transition: transform 100ms ease;
+  cursor: pointer;
+}
+
+.CustomerAuth__body {
+  padding: 130px 30px;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  position: relative;
+}
+
+.CustomerAuth__heading {
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+.CustomerAuth__credential {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  border-radius: 3px;
+}
+
+.CustomerAuth__input {
+  height: 60px;
+  padding: 24px 10px 20px;
+  border: 0px;
+  font-size: 18px;
+  background: #fff;
+  width: 100%;
+}
+
+.CustomerAuth__submit {
+  float: right;
+}
+
+.error {
+  display: block;
+  font-size: 15px;
+  padding: 10px;
+  position: relative;
+  min-height: 2.64286em;
+  background: #fbefee;
+  color: #c23628;
+}
+
+.product-img-link {
+	position: relative;
+	display: block;
+}
+
+.product-img-link:hover img {
+	transform: scale(1.1);
+}
+
+.product-img-link:after {
+	position: absolute;
+	width: 100px;
+	height: 50px;
+	display: flex;
+	opacity: 0;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	content: 'Shop Now';
+	border: 2px solid #1b1b1b;
+	background: #efefef;
+	color: #1b1b1b;
+	bottom: -50px;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	transition: all 300ms ease;
+}
+
+.product-img-link:hover:after {
+	opacity: 1;
+	bottom: -25px;
+}
+
+/* Footer styles */
+
+.ng-footer-container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 2rem auto;
+}
+
+.ng-footer-top-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.ng-footer-top-line {
+	height: 1px;
+	flex-grow: 1;
+	background: rgb(0, 0, 0);
+}
+
+.ng-footer-top-logo {
+	flex-shrink: 0;
+	padding: 30px 5%;
+	max-width: 30%;
+}
+
+
+
+.ng-footer-top-logo img {
+	max-width: 100%;
+}
+
+.ng-footer-links{
+	width: 33.33%;
+	text-align: center;
+}
+
+
+.ng-footer-links > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Lulo Clean One', sans-serif;
+	font-weight: 700;
+	font-size: .8rem;
+	letter-spacing: 2px;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.ng-footer-links > a:hover {
+  color: #000;
+}
+
+.ng-footer-links > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+.ng-footer-links > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.ng-footer-middle{
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+		font-family: 'Lulo Clean One', sans-serif;
+}
+
+
+.ng-social-link img {
+	max-width: 40px;
+}
+
+.ng-footer-social-media{
+	display: flex;
+	justify-content: space-around;
+	width: 33.33%;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.ng-social-link {
+	height: 40px;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    font-size: 1.35em;
+	}
+
+.ng-social-link::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 70px;
+	height: 70px;
+	border: 2px solid rgba(0,0,0,0.1);
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	transform: translateX(-50%) translateY(-50%) scale(0.2);
+}
+
+.ng-social-link:hover::before {
+	opacity: 1;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.ng-social-link::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	border: 2px solid rgba(0,0,0,0.1);
+	border-radius: 50%;
+	content: '';
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(0.2);
+	transform: translateX(-50%) translateY(-50%) scale(0.2);
+  border-width: 6px;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  -moz-transform: translateX(-50%) translateY(-50%) scale(0.8);
+  transform: translateX(-50%) translateY(-50%) scale(0.8);
+}
+
+.ng-social-link:hover::after {
+	opacity: 1;
+	-webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+	-moz-transform: translateX(-50%) translateY(-50%) scale(1);
+	transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+.ng-social-line-container{
+	width: 100%;
+	text-align: center;
+	padding: 40px 10px;
+}
+
+.ng-social-line{
+	width: 1px;
+	background: rgb(0,0,0);
+	height: 65px;
+	display: inline-block;
+}
+
+.facebook-icon {
+	margin-left: 15%;
+}
+
+.instagram-icon {
+	margin-right: 15%;
+}
+
+.ng-subscribe-container{
+	width: 100%;
+	text-align: center;
+}
+
+.ng-subscribe-form {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.ng-subscribe-text{
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	font-size: 3rem;
+	letter-spacing: 5px;
+	margin-bottom: 2rem;
+	padding: 20px;
+}
+
+@media (max-width: 768px) {
+	.ng-subscribe-text {
+		font-size: 2rem;
+	}
+}
+
+.ng-email-input {
+	background: rgb(255,255,255);
+	border: 1px solid rgb(0,0,0);
+	border-bottom-width: 0px;
+	color:rgb(0, 0, 0);
+	cursor:text;
+	display:inline-block;
+	font-family: 'Raleway', sans-serif;
+	font-size:12px;
+	font-style:normal;
+	font-weight:700;
+	height:50px;
+	letter-spacing:3px;
+	margin:0px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:1px;
+	text-align:center;
+	text-transform:uppercase;
+	transition-delay:0s;
+	transition-duration:0.4s;
+	transition-property: background;
+	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	width: 100%;
+	margin-top: 30px;
+	word-spacing:0px;
+	box-sizing: border-box;
+}
+
+.ng-text-input {
+	background: rgb(255,255,255);
+	border: 1px solid rgb(0,0,0);
+	border-bottom-width: 0px;
+	color:rgb(0, 0, 0);
+	cursor:text;
+	display:inline-block;
+	font-family: 'Raleway', sans-serif;
+	font-size:12px;
+	font-style:normal;
+	font-weight:700;
+	height:50px;
+	letter-spacing:3px;
+	margin:0px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:1px;
+	text-align:center;
+	text-transform:uppercase;
+	transition-delay:0s;
+	transition-duration:0.4s;
+	transition-property: background;
+	transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
+	width: 100%;
+	word-spacing:0px;
+	box-sizing: border-box;
+}
+
+.ng-email-submit{
+	padding-left:20px;
+	display:inline-block;
+	padding-right:20px;
+	border: 1px solid rgb(0,0,0);
+	font-weight:700;
+	text-transform:uppercase;
+	height:50px;
+	letter-spacing:3px;
+	width: 100%;
+	word-spacing:0px;
+	margin: 0;
+	font-family:'Roboto', sans-serif;
+	font-size:14px;
+	margin-bottom: 60px;
+	position: relative;
+}
+
+.ng-email-submit:hover span {
+	color: white;
+}
+
+.ng-email-submit span {
+	display: inline-block;
+	z-index: 2;
+	position: relative;
+	transition: color .4s ease;
+}
+
+.ng-email-submit::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	content: "";
+	-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transform: scale(0, 1);
+	-ms-transform: scale(0, 1);
+	transform: scale(0, 1);
+	-webkit-transform-origin: right center;
+	-ms-transform-origin: right center;
+	transform-origin: right center;
+	background: #000000;
+}
+
+.ng-email-submit:hover::before{
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+}
+
+
+@media only screen and (max-width: 560px) {
+	.ng-footer-top-logo {
+		max-width: 40%;
+	}
+	.ng-footer-social-media{
+		width: 60%;
+		order: 1;
+	}
+	.ng-footer-links{
+		order: 3;
+		width: 100%;
+	}
+	.ng-subscribe-container{
+		order: 2;
+		width: 100%;
+  }
+}
+
+.ng-copyright{
+	padding: 65px 20px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 200%;
+	font-family: 'Lulo Clean One', sans-serif;
+}
+
+.ng-nav-bar {
+  /* position: absolute; */
+  position: relative;
+  height: 100px;
+  top: 0px;
+	box-sizing: border-box;
+	max-width: 1400px;
+	margin: 0 auto;
+  /* margin-top: 300px;
+  margin-bottom: 150px; */
+  z-index: 100;
+	background: rgba(255,255,255,.87);
+	overflow: visible;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 15px 40px;
+	letter-spacing: 2px;
+	width: 100%;
+	font-family: 'Lulo Clean One', sans-serif;
+}
+
+.ng-nav-bar-logo-container{
+	width: 25%;
+	overflow: visible;
+	position: relative;
+	height: 1px;
+}
+
+.ng-nav-bar-logo-container-inner{
+	position: absolute;
+  /* top: -220px; */
+  top: 0px;
+	width: 100%;
+	box-sizing: border-box;
+	left: 0;
+	background: rgba(255,255,255,.93);
+	box-shadow: 0px 15px 35px rgba(0,0,0,.3);
+	padding: 30px;
+	text-align: center;
+	transition: all .2s ease;
+}
+
+.ng-nav-bar-logo-list-item{
+	font-size: 1.6rem;
+}
+
+.ng-nav-bar-usa {
+  padding: 20px 15%;
+  max-width: 150px;
+  margin: 20px auto;
+}
+
+.ng-nav-bar-logo-list-item-image img{
+	display: block;
+  width:100%;
+	margin-bottom: 25px;
+}
+
+.ng-nav-bar-logo-list-line{
+	width: calc(100% - 30px);
+	display: inline-block;
+	background: rgb(0,0,0);
+	height: 1px;
+	margin: 15px;
+}
+
+.ng-nav-bar > a{
+	text-transform: uppercase;
+	padding: 10px;
+	text-align: center;
+}
+
+.ng-nav-bar > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	display: inline-block;
+}
+
+.ng-nav-bar > a:hover {
+  color: #000;
+}
+
+.ng-nav-bar > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+
+.ng-nav-bar > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.ng-nav-bar > a.active-nav:before {
+   visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+a.active-nav:before {
+	content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #000;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a.active-nav {
+	color: #00254A;
+}
+
+.ng-nav-bar-link-line {
+	/* height: 40px; */
+	height: 25px;
+	width: 1px;
+	background: rgb(0,0,0);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+		font-family: 'Lulo Clean One', sans-serif;
+}
+
+
+
+
+.menu {
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  cursor: pointer;
+	display: none;
+}
+.menu.active:before {
+  -webkit-animation: slideLeft 0.2s 0.05s ease-out forwards;
+          animation: slideLeft 0.2s 0.05s ease-out forwards;
+}
+.menu.active:after {
+  -webkit-animation: slideRight 0.2s 0.05s ease-out forwards;
+          animation: slideRight 0.2s 0.05s ease-out forwards;
+}
+.menu.active .bar {
+  -webkit-animation: rotate45 0.2s ease-out forwards;
+          animation: rotate45 0.2s ease-out forwards;
+}
+.menu.active .bar:last-child {
+  -webkit-animation: rotate135 0.2s 0.2s ease-out forwards;
+          animation: rotate135 0.2s 0.2s ease-out forwards;
+}
+.menu.back:before {
+  -webkit-transform: translateX(-120%);
+          transform: translateX(-120%);
+  -webkit-animation: slideBack 0.2s 0.05s ease-out forwards;
+          animation: slideBack 0.2s 0.05s ease-out forwards;
+}
+.menu.back:after {
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+  -webkit-animation: slideBack 0.2s 0.05s ease-out forwards;
+          animation: slideBack 0.2s 0.05s ease-out forwards;
+}
+.menu.back .bar {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-animation: rotateBack 0.2s ease-out forwards;
+          animation: rotateBack 0.2s ease-out forwards;
+}
+.menu.back .bar:last-child {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  -webkit-animation: rotateBack 0.2s 0.2s ease-out forwards;
+          animation: rotateBack 0.2s 0.2s ease-out forwards;
+}
+.menu:before {
+  content: '';
+  display: block;
+	width: 25px;
+  height: 2px;
+  background: #000;
+}
+.menu:after {
+  content: '';
+  display: block;
+	width: 25px;
+  height: 2px;
+  background: #000;
+}
+.menu .bar {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 5px 0;
+}
+.menu .bar:last-child {
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 7px;
+}
+@-webkit-keyframes rotate135 {
+  form {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+}
+@keyframes rotate135 {
+  form {
+    opacity: 1;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+}
+@-webkit-keyframes rotate45 {
+  to {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+@keyframes rotate45 {
+  to {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+@-webkit-keyframes rotateBack {
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@keyframes rotateBack {
+  to {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@-webkit-keyframes slideRight {
+  to {
+    -webkit-transform: translateX(122%);
+            transform: translateX(122%);
+  }
+}
+@keyframes slideRight {
+  to {
+    -webkit-transform: translateX(122%);
+            transform: translateX(122%);
+  }
+}
+@-webkit-keyframes slideLeft {
+  to {
+    -webkit-transform: translateX(-122%);
+            transform: translateX(-122%);
+  }
+}
+@keyframes slideLeft {
+  to {
+    -webkit-transform: translateX(-122%);
+            transform: translateX(-122%);
+  }
+}
+@-webkit-keyframes slideBack {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slideBack {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+
+@-webkit-keyframes shippingPopUpAnimation {
+  to {
+		-webkit-opacity: 1;
+						opacity: 1;
+    -webkit-transform: translateY(-100%) translateX(0);
+            transform: translateY(-100%) translateX(0);
+  }
+}
+@keyframes shippingPopUpAnimation {
+  to {
+		-webkit-opacity: 1;
+            opacity: 1;
+    -webkit-transform: translateY(-100%) translateX(0);
+            transform: translateY(-100%) translateX(0);
+  }
+}
+
+.ng-shipping-pop-up{
+	text-transform: uppercase;
+	color: rgb(0,0,0);
+	font-weight: 700;
+	font-size: 18px;
+	padding: 15px 30px;
+	background: rgba(255,255,255,.87);
+	position: absolute;
+	top: 0px;
+	right: 40px;
+	opacity: 0;
+	height: auto;
+	box-sizing: border-box;
+	transform: translateY(-100%) translateX(100%);
+	/* transition: all 3s ease; */
+	animation: shippingPopUpAnimation 1s forwards;
+	animation-delay: 1s;
+}
+
+
+
+@media only screen and (max-width: 959px) {
+	.ng-nav-bar-logo-container-inner{
+		padding: 15px;
+	}
+	.ng-nav-bar-logo-list-item{
+		font-size: 1.2rem;
+	}
+	.ng-nav-bar > a {
+		font-size: 10px;
+	}
+	.ng-nav-bar{
+		padding: 10px 20px;
+	}
+}
+
+.hero-slider-container {
+  position: relative;
+  width: 100%;
+  background: #efefef;
+  overflow: hidden;
+}
+
+
+@media only screen and (max-width: 680px) {
+	.ng-nav-bar-logo-container-inner{
+		top: 0px;
+		transform: translateY(-50%);
+		width: 100%;
+		background: rgba(255,255,255,0);
+		box-shadow: 0px 15px 5px rgba(0,0,0,0);
+		padding: 15px;
+	}
+	.ng-nav-bar-logo-list-item{
+		display: none;
+	}
+	.ng-nav-bar-logo-list-line{
+		display: none;
+	}
+	.ng-nav-bar-logo-list-item-image img{
+		margin-bottom: 0px;
+		width: auto;
+		max-height: 100%;
+	}
+	.ng-nav-bar-logo-list-item-image{
+		height: 50px;
+	}
+	.ng-nav-bar > a{
+		display: none;
+	}
+	.ng-nav-bar-link-line {
+		display: none;
+	}
+	.menu {
+		display: inline-block;
+	}
+	.ng-nav-bar{
+    justify-content: space-between;
+    margin: 0;
+    top: 0;
+    height: 75px;
+  }
+  /* .hero-slider-container {
+    height: 50vh;
+  } */
+	.ng-nav-bar-logo-container{
+		width: 55%;
+	}
+	.ng-shipping-pop-up{
+		font-size: 10px;
+		font-weight: 700;
+		padding: 5px 30px;
+		height: auto;
+		line-height: 10px;
+		text-align: center;
+		position: absolute;
+		top: 46px;
+		right: 0px;
+		height: 20px;
+		width: 100%;
+		transform: translateY(00%);
+		animation: none;
+		opacity: 1;
+	}
+}
+
+.ng-brand-img {
+	display: inline-block;
+	justify-content: flex-start;
+	height: 100%;
+	margin-right: 5rem;
+}
+
+@media (max-width: 680px) {
+	.mobile-menu-items {
+		justify-content: flex-end;
+    align-items: center;
+    display: flex;
+	}
+
+	.cart {
+		order: 1;
+		margin-right: 2rem;
+	}
+
+	.menu {
+		order: 2;
+	}
+}
+
+.ant-carousel {
+  /* height: 100%; */
+}
+
+.ant-carousel .slick-slider {
+  /* height: 100%; */
+  width: 100%;
+}
+
+.ant-carousel .slick-slider .slick-slide img{
+  object-fit: cover;
+  width: 100%;
+}
+
+.ant-carousel .slick-slider .img-slide {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: #00254A;
+}
+
+
+/* // Custom Slick slider */
+
+.slider-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  height: auto;
+}
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+       -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+         -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+}
+
+.slick-track
+{
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-next{
+  right: 12px;
+}
+
+.slick-prev {
+  left: 12px;
+}
+
+
+.slick-next,.slick-prev{
+  position:absolute;
+  display:block;
+  padding:0
+}
+
+.slick-next:before, .slick-prev:before {
+  font-size: 25px;
+}
+
+.slick-next,.slick-prev{
+  top: 45%;
+  width:25px;
+  height:25px;
+  -webkit-transform:translate(0,-50%);
+  -ms-transform:translate(0,-50%);
+  transform:translate(0,-50%);
+  cursor:pointer;
+  color: #000;
+  border:none;
+  z-index: 29;
+  outline:0;
+  font-size: 25px;
+}
+
+@media (min-width: 1200px) {
+  .slick-next,.slick-prev { 
+    width:60px;
+    height:60px;
+    font-size: 50px;
+  }
+}
+
+.thumbnail-img {
+  background: #efefef;
+  /* height: 100%; */
+  max-height: 100px;
+  margin: 0 auto;
+}
+
+.main-product-slider {
+  margin-bottom: 6rem;
+}
+
+.product-slide-img {
+  max-height: 285px;
+  margin: 0 auto;
+}
+
+.slider-thumbnails .slick-list .slick-track {
+  height: 106px;
+	overflow: hidden;
+}
+
+.slider-thumbnails .slick-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	border: 1px solid #efefef;
+}
+
+.slider-thumbnails .slick-current {
+	border: 1px solid #F3BE79;
+}
+
+/* mobile nav styles */
+
+#nav-mobile {
+  height: 100vh;
+  width: 70vw;
+  background-color: #FFF;
+	z-index: 100;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	border-right: 1px solid #e5e5e5;
+}
+
+#nav-mobile .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#nav-mobile .wrapper .container-linkPr {
+  padding: 160px 60px 30px 15px;
+}
+
+#nav-mobile .wrapper .container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: all 0.5s cubic-bezier(0.000, 0.785, 0.000, 1.000);
+  -o-transition: all 0.5s cubic-bezier(0.000, 0.785, 0.000, 1.000);
+  transition: all 0.5s cubic-bezier(0.000, 0.785, 0.000, 1.000);
+}
+
+#nav-mobile .wrapper .container-linkPr ul {
+  position: relative;
+  list-style: none;
+}
+
+#nav-mobile .wrapper .container-linkPr ul li {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+#nav-mobile .wrapper .container-linkPr ul li a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+}
+
+.test {
+	background-size: cover;
+}
+
+.header-wrapper {
+	background: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 1.25rem;
+	text-align: center;
+	margin-bottom: 1.25rem;
+	border-bottom: 2px solid #fff;
+}
+
+.gallery-header-title {
+	font-family: 'Monoton', cursive;
+	color: #256578;
+	font-size: 4rem;
+}
+
+	
+.hr {
+	background: #fff;
+	width: 100%;
+	height: 12px;
+}
+
+.gallery-social-icons {
+	display: flex;
+	max-width: 150px;
+	margin: 3rem auto;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.gallery-social-icons .icon svg {
+	max-height: 50px;
+	fill: #fff;
+}
+
+.gallery-social-icons a:hover .icon svg {
+	opacity: .75;
+	fill: #256578;
+}
+
+.ig-feed {
+	position: relative;
+	margin-top: 6rem;
+}
+
+.gallery-cta {
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 3rem;
+	font-family: 'Lulo Clean One', sans-serif;
+}
+
+.social-handle {
+	font-weight: 700;
+	color: #fff;
+	font-size: 3rem;
+}
+
+@media (min-width: 768px) {
+	.gallery-header-title{
+		font-size: 7rem
+	}
+	.gallery-cta {
+		font-size: 4rem;
+	}
+	.social-handle {
+		font-size: 4rem;
+	}
+}
+
+/* Story page */
+
+.story-page h1 {
+	text-align: center;
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1px;
+	margin-bottom: 3.9rem;
+	color: teal;
+	font-family: 'Lulo Clean One';
+}
+
+.story-p-wrapper {
+	background-color: rgba(255, 255, 255, 0.86);
+	max-width: 850px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px 20px;
+	text-align: center;
+}
+
+.story-p-wrapper p {
+	font-size: 16px;
+	opacity: 1;
+	color: #000;
+}
+
+.story-dark-content {
+	width: 100%;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	background: rgba(51, 51, 51, 0.7);
+	margin-bottom: 0;
+}
+
+.dark-content-wrapper {
+	width: 100%;
+	max-width: 850px;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+}
+
+.dark-content-wrapper h3 {
+	color: #fff;
+	font-size: 2rem;
+}
+
+.dark-content-wrapper img  {
+	max-width: 700px;
+	width: 100%;
+	margin: 2rem auto 0;
+	border: 5px solid#fff;
+}
+
+.content-wrapper.support-page {
+	background-color: #efefef;
+	padding: 20px;
+	max-width: 900px;
+}
+
+.CForm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.usa-img {
+	width: 100%;
+	max-width: 50px;
+	height: auto;
+	margin-bottom: 2rem;
+}
+
+.hero-logo {
+	max-width: 250px;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+}
+
+
+.content-wrapper.product {
+	background: #fff;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+	.content-wrapper.product {
+		padding-bottom: 2rem;
+	}
+
+	.content-wrapper {
+		margin: 2rem auto;
+	}
+}
