@@ -148,17 +148,17 @@ export default class extends Component {
 			<Helmet>
 				<meta name="image" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 
-				<meta itemprop="name" content="Elastic Apple Watch Bands | Made in the USA" />
-				<meta itemprop="description" content="Elastic Apple Watch Bands designed with three things in mind: comfort, quality, and style. Designed and manufactured by students in Texas." />
+				<meta itemprop="name" content="Braxley Bands - The world's most comfortable Apple Watch bands." />
+				<meta itemprop="description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 				<meta itemprop="image" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 
 				<meta name="twitter:card" content="summary" />
-				<meta name="twitter:title" content="Elastic Apple Watch Bands | Made in the USA" />
-				<meta name="twitter:description" content="Elastic Apple Watch Bands designed with three things in mind: comfort, quality, and style. Designed and manufactured by students in Texas." />
+				<meta name="twitter:title" content="Braxley Bands - The world's most comfortable Apple Watch bands." />
+				<meta name="twitter:description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 				<meta name="twitter:image:src" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 
-				<meta name="og:title" content="Elastic Apple Watch Bands | Made in the USA" />
-				<meta name="og:description" content="Elastic Apple Watch Bands designed with three things in mind: comfort, quality, and style. Designed and manufactured by students in Texas." />
+				<meta name="og:title" content="Braxley Bands - The world's most comfortable Apple Watch bands." />
+				<meta name="og:description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 				<meta name="og:image" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 				<meta name="og:url" content="https://braxleybands.com" />
 				<meta name="og:site_name" content="Braxley Bands" />
@@ -175,8 +175,8 @@ export default class extends Component {
         <Route exact path="/" render={() => 
           <React.Fragment>
 						<Helmet>
-							<title>Elastic Apple Watch Bands - Comfort Stretch | Braxley Bands</title>
-							<meta name="description" content="Elastic Apple watch bands that are machine washable and seriously comfortable! We offer over 25 designs and colors to choose from including pink, red, gold, denim, stripes and more. Get yours now!" />
+							<title>Braxley Bands - The world's most comfortable Apple Watch bands.</title>
+							<meta name="description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 						</Helmet>
 						<Hero />
             <Products
@@ -195,8 +195,8 @@ export default class extends Component {
         <Route exact path="/gallery" render={() => (
 					<React.Fragment>
 						<Helmet>
-							<title>Gallery - See Elastic Apple Watch Bands in Action</title>
-							<meta name="description" content="See who else is wearing elastic apple watch bands across social media! Our customers range from students to executives, but they all love the combination of style and comfort they get from our apple watch bands." />
+							<title>Gallery</title>
+							<meta name="description" content="Our Instagram game is on fire. Follow @braxleybands to get exclusive deals and find out when new bands drop." />
 						</Helmet>
 
 						<GalleryPage />
@@ -206,15 +206,21 @@ export default class extends Component {
         <Route exact path="/our-story" render={() => (
 					<React.Fragment>
 					<Helmet>
-						<title>The Story of the Elastic Apple Watch Band - Braxley Bands</title>
-						<meta name="description" content="Learn how a simple piece of elastic was transformed into the most comfortable apple watch band on the market. Meet the two students behind the project and engage with them here!" />
+						<title>Our Story</title>
+						<meta name="description" content="Read how two college students started pursuing their dreams in a dorm room using a sewing machine borrowed from their grandma." />
 					</Helmet>
 					<StoryPage />
 					</React.Fragment>
         )} />
 
         <Route exact path="/contact-us" render={() => (
+          <React.Fragment>
+					<Helmet>
+						<title>Contact Us</title>
+						<meta name="description" content="Let us know what you think!" />
+					</Helmet>
 					<ContactPage />
+					</React.Fragment>
         )} />
 
         <Route exact path="/support" render={() => (
