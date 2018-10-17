@@ -108,6 +108,7 @@ class Product extends Component {
 
   render() {
 		let inStock = this.state.selectedVariant.attrs.available.value
+		console.log(this.props.product)
 		let OGImage = this.props.product.images[0].src
 		let OGPrice = this.props.product.options[2] ? true : false
     let variant = this.state.selectedVariant || this.props.product.variants[0]

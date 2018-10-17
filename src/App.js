@@ -62,8 +62,8 @@ export default class extends Component {
 		});
 		
 		this.props.client.collection.fetchAllWithProducts({productsFirst: 50}).then((collections) => {
-			console.log(collections);
-			console.log(collections[0].products);
+			// console.log(collections);
+			// console.log(collections[0].products);
 
 			this.setState({
 				products: collections[0].products
