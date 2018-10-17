@@ -134,6 +134,7 @@ class Product extends Component {
 					<meta name="og:url" content={`https://braxleybands.com/products/${this.props.product.handle}`} />
 					<meta name="og:title" content={this.props.product.title + " | Elastic Apple Watch Band"}/>
 					<meta name="og:image" content={OGImage.toString} />
+					<meta name="description" content={this.props.product.description} />
 				</Helmet>
 
         <Col xl={14}>
