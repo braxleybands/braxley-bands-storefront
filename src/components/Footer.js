@@ -57,7 +57,7 @@ export default () => (
 		</div>
         <div className='ng-copyright'>
           <Link to="/privacy-policy">Privacy Policy</Link>&nbsp;&nbsp; |&nbsp;&nbsp; © 2018 Braxley LLC<br /><span style={{opacity: .5}}>
-					Code by <a href="https://nextgencode.io">NextGen Code Company</a>
+					{/* Code by <a href="https://nextgencode.io">NextGen Code Company</a> */}
 					</span>
         </div>
       </div>

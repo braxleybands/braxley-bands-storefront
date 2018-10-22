@@ -196,7 +196,7 @@ class Header extends React.Component {
         <NavLink to='/support' activeClassName="active-nav">
           support
 		    </NavLink>
-				<div className='ng-nav-bar-link-line'></div>
+				{/* <div className='ng-nav-bar-link-line'></div> */}
         {/* <NavLink to='/blog' activeClassName="active-nav">
           blog
 		    </NavLink> */}
