@@ -20,7 +20,7 @@ class Products extends Component {
       <div className="content-wrapper">
 				{
 				this.props.products.length > 0 ? 
-				<Row type="flex" justify="center">{products}</Row> 
+				<Row className='ng-center-img' type="flex" justify="center">{products}</Row> 
 
 				: 
 

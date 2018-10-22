@@ -1905,3 +1905,8 @@ a {
 		margin: 2rem auto;
 	}
 }
+
+
+.product-img-link img{
+  margin: auto;
+}
