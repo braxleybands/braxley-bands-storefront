@@ -154,11 +154,11 @@ export default class extends Component {
 
 				<meta name="twitter:card" content="summary" />
 				<meta name="twitter:title" content="Braxley Bands - The world's most comfortable Apple Watch bands." />
-				<meta name="twitter:description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
+				<meta name="twitter:description" content="Elastic apple watch bands made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 				<meta name="twitter:image:src" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 
 				<meta name="og:title" content="Braxley Bands - The world's most comfortable Apple Watch bands." />
-				<meta name="og:description" content="Made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
+				<meta name="og:description" content="Elastic apple watch bands made with innovative ELSTC™ elastic because nobody likes buckles or clasps on their wrist. Free shipping on any 2+ bands for a limited time!" />
 				<meta name="og:image" content="https://res.cloudinary.com/devhound/image/upload/v1531340531/braxley-bands-meta-img_naoupm.png" />
 				<meta name="og:url" content="https://braxleybands.com" />
 				<meta name="og:site_name" content="Braxley Bands" />
