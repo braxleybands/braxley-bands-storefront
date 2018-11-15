@@ -11,8 +11,8 @@ export default () => (
 
 			<form name="subscribe" className="ng-subscribe-form" action="https://braxleybands.us18.list-manage.com/subscribe/post?u=a1be8e0f04949f3b607635a15&amp;id=50b49a467e" target="_blank" method="post" >
 				<input className='ng-email-input' type="email" name="EMAIL" placeholder="name@email.com" required/>
-				<input className='ng-text-input' type="text" name="FNAME" placeholder="First Name" required/>
-				<input className='ng-text-input' type="text" name="LNAME" placeholder="Last Name" required/>
+				<input className='ng-text-input' type="text" name="FNAME" placeholder="First Name" />
+				<input className='ng-text-input' type="text" name="LNAME" placeholder="Last Name" />
 				<div style={{ position: "absolute", left: "-5000px" }}><input type="hidden" name="form-name" tabIndex="-1" value="subscribe" /></div>
 				<button type="submit" className="ng-email-submit" title="Subscribe">
 					<span>Subscribe</span>
