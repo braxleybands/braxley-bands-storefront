@@ -142,7 +142,7 @@ class Hero extends Component {
 								<div>Watch</div>
 								<div>Bands</div>
 							</HTitle>
-							<DesignedP>- Designed and Manufactured in Texas -</DesignedP>
+							<DesignedP>- Designed in Austin, Texas -</DesignedP>
 						</HMiddleCol>
 						<Col xs={{ order: 2, span: 12 }} sm={{ order: 3, span: 12 }} md={{ order: 3, span: 12 }} lg={{ order: 3, span: 8 }}>
 							<ImgWrapper>
