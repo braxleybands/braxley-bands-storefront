@@ -222,7 +222,7 @@ class Header extends React.Component {
       </NavContainer>
 
 			<ShippingContainer>
-				<h1>BRAXLEY BLACK FRIDAY - BUY 2 GET 1 FREE + FREE SHIPPING</h1>
+				<h1>BUY 2 GET 1 FREE + FREE SHIPPING</h1>
 			</ShippingContainer>
 
 			</React.Fragment>
