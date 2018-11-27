@@ -222,7 +222,7 @@ class Header extends React.Component {
       </NavContainer>
 
 			<ShippingContainer>
-				<h1>BUY 2 GET 1 FREE + FREE SHIPPING - USE CODE: CHEER</h1>
+				<h1>FREE SHIPPING ON ANY 2+ BANDS</h1>
 			</ShippingContainer>
 
 			</React.Fragment>
